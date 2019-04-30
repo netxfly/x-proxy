@@ -114,7 +114,9 @@ func (r *Record) Insert() (err error) {
 		case "mysql":
 			_, err = Engine.Table("record").Insert(r)
 		case "mongodb":
+			_, _ = GetSession()
 			_, err = Session.Collection("record").Insert(r)
+			_ = Session.Close()
 			log.Logger.Warnf("insert err: %v", err)
 		}
 	}

@@ -78,12 +78,23 @@ func NewDbEngine() (err error) {
 		dataSourceName := fmt.Sprintf("%v:%v@tcp(%v:%v)/%v?charset=utf8",
 			DbConfig.DbUser, DbConfig.DbPass, DbConfig.DbHost, DbConfig.DbPort, DbConfig.DbName)
 		Engine, err = xorm.NewEngine("mysql", dataSourceName)
-		err = Engine.Ping()
 		if err == nil {
-			_ = Engine.Sync2(new(Record))
+			err = Engine.Ping()
+			if err == nil {
+				_ = Engine.Sync2(new(Record))
+			}
 		}
 
 	case "mongodb":
+		_, _ = GetSession()
+	}
+
+	return err
+}
+
+func GetSession() (db.Database, error) {
+	var err error
+	if Session == nil {
 		DbSettings = mongo.ConnectionURL{Host: fmt.Sprintf("%v:%v", DbConfig.DbHost, DbConfig.DbPort), User: DbConfig.DbUser,
 			Password: DbConfig.DbPass, Database: DbConfig.DbName}
 		Session, err = mongo.Open(DbSettings)
@@ -93,5 +104,5 @@ func NewDbEngine() (err error) {
 		log.Logger.Infof("DB Type: %v, DbSettings: %v, Connect err status: %v", DbConfig.DbType, DbSettings, Session.Ping())
 	}
 
-	return err
+	return Session, err
 }
