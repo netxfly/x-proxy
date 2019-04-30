@@ -2,6 +2,28 @@
 
 本仓库为『代理蜜罐的开发与应用实战』的配套代码。
 
+### 代理蜜罐架构
+
+![](http://docs.xsec.io/images/x-proxy//proxy_honeypot.png)
+
+- 代理蜜罐Agent，提供代理服务，收集http请求与响应数据并发送到server集群
+- 代理蜜罐Server（支持水平扩展），接收Agent传来的数据，对数据简单判断后入库
+- 后端数据库（mongodb），存储代理蜜罐的数据
+- 数据分析程序，对存数的数据进行加工处理，方便管理端展示
+- 管理端，查看收集到的数据与数据分析结果
+
+`server`与`manager`的运行依赖`mongodb`，可通过以下命令创建一个用户供`server`与`manager`使用：
+
+```shell
+db.createUser(
+... {
+...  user : "xproxy",
+...  pwd : "xsec.io",
+...  roles: [ { role : "readWrite", db : "xproxy" }]
+... }
+... )
+```
+
 ## 附录
 
 ### 参考资料
