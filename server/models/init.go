@@ -101,6 +101,7 @@ func GetSession() (db.Database, error) {
 		if err != nil {
 			log.Logger.Panicf("Connect Database failed, err: %v", err)
 		}
+		Session.SetMaxOpenConns(100)
 		log.Logger.Infof("DB Type: %v, DbSettings: %v, Connect err status: %v", DbConfig.DbType, DbSettings, Session.Ping())
 	}
 
