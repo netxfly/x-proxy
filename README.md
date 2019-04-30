@@ -8,11 +8,11 @@
 - [Is NordVPN a Honeypot?](http://vpnscam.com/is-nordvpn-a-honeypot/)
 - [基于vpn和透明代理的web漏洞扫描器的实现思路及demo](https://github.com/netxfly/Transparent-Proxy-Scanner)
 
-### 学习GO语言的资料
+### GO语言学习资料
 
 - [在2019成为一名Go开发者的路线图](https://github.com/Quorafind/golang-developer-roadmap-cn)
-- [Go 入门指南](https://github.com/Unknwon/the-way-to-go_ZH_CN)
-- [build-web-application-with-golang](https://github.com/astaxie/build-web-application-with-golang)
+- [Go入门指南](https://github.com/Unknwon/the-way-to-go_ZH_CN)
+- [GO WEB编程](https://github.com/astaxie/build-web-application-with-golang)
 - [Go语言高级编程](https://github.com/chai2010/advanced-go-programming-book)
 - [Go 语言学习资料与社区索引](https://github.com/Unknwon/go-study-index)
 

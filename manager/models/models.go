@@ -27,7 +27,6 @@ package models
 import (
 	"fmt"
 	"time"
-
 	"x-proxy/manager/logger"
 	"x-proxy/manager/settings"
 
@@ -68,6 +67,10 @@ func init() {
 func NewMongodbClient() (err error) {
 	url := fmt.Sprintf("mongodb://%v:%v@%v:%v/%v", USERNAME, PASSWORD, Host, Port, DataName)
 	Session, err = mgo.Dial(url)
-	Session.SetSocketTimeout(1 * time.Hour)
+	if err == nil {
+		Session.SetSocketTimeout(1 * time.Hour)
+	} else {
+		logger.Logger.Panicf("connect mongodb failed, url: %v, err: %v", url, err)
+	}
 	return err
 }
