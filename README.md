@@ -2,6 +2,11 @@
 
 本仓库为『代理蜜罐的开发与应用实战』的配套代码。
 
+原文地址：
+
+- [freebuf](https://www.freebuf.com/articles/network/202310.html) 
+
+
 ### 代理蜜罐架构
 
 ![](http://docs.xsec.io/images/x-proxy//proxy_honeypot.png)
@@ -27,6 +32,7 @@ db.createUser(
 ## 附录
 
 ### 参考资料
+
 - [Is NordVPN a Honeypot?](http://vpnscam.com/is-nordvpn-a-honeypot/)
 - [基于vpn和透明代理的web漏洞扫描器的实现思路及demo](https://github.com/netxfly/Transparent-Proxy-Scanner)
 
@@ -37,6 +43,7 @@ db.createUser(
 - [GO WEB编程](https://github.com/astaxie/build-web-application-with-golang)
 - [Go语言高级编程](https://github.com/chai2010/advanced-go-programming-book)
 - [Go 语言学习资料与社区索引](https://github.com/Unknwon/go-study-index)
+- [Go 学习之路](https://github.com/developer-learning/learning-golang)
 
 ### 用到的库与框架
 
