@@ -6,6 +6,7 @@
 
 - [freebuf](https://www.freebuf.com/articles/network/202310.html) 
 - [知乎专栏](https://zhuanlan.zhihu.com/p/64084802)
+- [Blog](http://sec.lu/2019/4/12/x-proxy.html)
 
 
 ### 代理蜜罐架构
