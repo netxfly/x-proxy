@@ -5,6 +5,7 @@
 原文地址：
 
 - [freebuf](https://www.freebuf.com/articles/network/202310.html) 
+- [知乎专栏](https://zhuanlan.zhihu.com/p/64084802)
 
 
 ### 代理蜜罐架构
