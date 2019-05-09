@@ -1,8 +1,6 @@
 ## 代理蜜罐的开发与应用实战
 
-本仓库为『代理蜜罐的开发与应用实战』的配套代码。
-
-原文地址：
+本仓库为『代理蜜罐的开发与应用实战』的配套代码，原文地址：
 
 - [freebuf](https://www.freebuf.com/articles/network/202310.html) 
 - [知乎专栏](https://zhuanlan.zhihu.com/p/64084802)
