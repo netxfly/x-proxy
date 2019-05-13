@@ -44,6 +44,7 @@ db.createUser(
 - [Go语言高级编程](https://github.com/chai2010/advanced-go-programming-book)
 - [Go 语言学习资料与社区索引](https://github.com/Unknwon/go-study-index)
 - [Go 学习之路](https://github.com/developer-learning/learning-golang)
+- [GO101](https://gfw.go101.org/article/101.html)
 
 ### 用到的库与框架
 
