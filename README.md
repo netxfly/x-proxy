@@ -36,15 +36,15 @@ db.createUser(
 - [Is NordVPN a Honeypot?](http://vpnscam.com/is-nordvpn-a-honeypot/)
 - [基于vpn和透明代理的web漏洞扫描器的实现思路及demo](https://github.com/netxfly/Transparent-Proxy-Scanner)
 
-### GO语言学习资料
+### Go语言学习资料
 
 - [在2019成为一名Go开发者的路线图](https://github.com/Quorafind/golang-developer-roadmap-cn)
 - [Go入门指南](https://github.com/Unknwon/the-way-to-go_ZH_CN)
-- [GO WEB编程](https://github.com/astaxie/build-web-application-with-golang)
+- [Go WEB编程](https://github.com/astaxie/build-web-application-with-golang)
 - [Go语言高级编程](https://github.com/chai2010/advanced-go-programming-book)
 - [Go 语言学习资料与社区索引](https://github.com/Unknwon/go-study-index)
-- [Go 学习之路](https://github.com/developer-learning/learning-golang)
-- [GO101](https://gfw.go101.org/article/101.html)
+- [Go学习之路](https://github.com/developer-learning/learning-golang)
+- [Go 101](https://gfw.go101.org/article/101.html)
 
 ### 用到的库与框架
 
