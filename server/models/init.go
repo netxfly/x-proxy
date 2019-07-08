@@ -25,8 +25,8 @@ THE SOFTWARE.
 package models
 
 import (
-	"xsec-proxy/server/log"
-	"xsec-proxy/server/settings"
+	"x-proxy/server/log"
+	"x-proxy/server/settings"
 
 	"upper.io/db.v3"
 	"upper.io/db.v3/mongo"
