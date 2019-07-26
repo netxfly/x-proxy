@@ -26,19 +26,34 @@ package log
 
 import (
 	"github.com/sirupsen/logrus"
-	"github.com/x-cray/logrus-prefixed-formatter"
+
+	"net/http"
+	"time"
+
+	"x-proxy/agent/util/api"
 )
 
-var (
-	Logger     *logrus.Entry
-	HttpLogger *logrus.Entry
+type (
+	HttpHook struct {
+		HttpClient http.Client
+	}
 )
 
-func init() {
-	l := logrus.New()
-	l.Formatter = new(prefixed.TextFormatter)
-	l.Level = logrus.DebugLevel
-	Logger = l.WithFields(logrus.Fields{"prefix": "x-proxy agent"})
+func NewHttpHook() (*HttpHook, error) {
+	timeout := time.Duration(1 * time.Second)
+	client := http.Client{Timeout: timeout}
+	return &HttpHook{HttpClient: client}, nil
+}
 
-	HttpLogger = logrus.New().WithFields(logrus.Fields{"post": true, "prefix": "MT honeypot agent"})
+func (hook *HttpHook) Fire(entry *logrus.Entry) (err error) {
+	field := entry.Data
+	data := entry.Message
+	_, ok := field["post"]
+	if ok {
+		err = api.Post(data)
+	}
+	return err
+}
+func (hook *HttpHook) Levels() []logrus.Level {
+	return logrus.AllLevels
 }

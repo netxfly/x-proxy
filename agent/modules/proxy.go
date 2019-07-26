@@ -36,7 +36,6 @@ import (
 	"github.com/elazarl/goproxy"
 
 	"x-proxy/agent/log"
-	"x-proxy/agent/util/api"
 	"x-proxy/agent/vars"
 )
 
@@ -151,21 +150,22 @@ func RespHandlerFunc(resp *http.Response, ctx *goproxy.ProxyCtx) *http.Response 
 		t, ok := vars.Cmap.Get(fmt.Sprintf("sess_%v", ctx.Session))
 		defer vars.Cmap.Remove(fmt.Sprintf("sess_%v", ctx.Session))
 		if ok {
-			params, _ := t.(url.Values)
-			//log.Logger.Errorf("params: %v, ok: %v", params, ok)
-
-			meta := NewMeta(ctx, params, time.Now())
-			meta.readBody()
-			r := meta.Parse()
-			r.print()
-			data, err := r.Json()
-			if err == nil {
-				go func() {
-					_ = api.Post(string(data))
-				}()
+			params, ok := t.(url.Values)
+			if ok {
+				meta := NewMeta(ctx, params, time.Now())
+				meta.readBody()
+				r := meta.Parse()
+				r.print()
+				data, err := r.Json()
+				if err == nil {
+					go func() {
+						//_ = api.Post(string(data))
+						log.HttpLogger.Info(data)
+					}()
+				}
 			}
 		}
-
 	}
+
 	return resp
 }

@@ -27,7 +27,7 @@ package settings
 import (
 	"gopkg.in/ini.v1"
 
-	"x-proxy/agent/log"
+	"log"
 )
 
 var (
@@ -41,6 +41,6 @@ func init() {
 	Cfg, err = ini.Load(source)
 
 	if err != nil {
-		log.Logger.Panicln(err)
+		log.Panicf("load conf/app.ini failed, err: %v\n", err)
 	}
 }
