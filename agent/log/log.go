@@ -40,5 +40,5 @@ func init() {
 	l.Level = logrus.DebugLevel
 	Logger = l.WithFields(logrus.Fields{"prefix": "x-proxy agent"})
 
-	HttpLogger = logrus.New().WithFields(logrus.Fields{"post": true, "prefix": "MT honeypot agent"})
+	HttpLogger = logrus.New().WithFields(logrus.Fields{"post": true, "prefix": "x-proxy agent"})
 }
