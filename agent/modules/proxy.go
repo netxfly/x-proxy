@@ -36,6 +36,7 @@ import (
 	"github.com/elazarl/goproxy"
 
 	"x-proxy/agent/log"
+	"x-proxy/agent/util/api"
 	"x-proxy/agent/vars"
 )
 
@@ -159,8 +160,8 @@ func RespHandlerFunc(resp *http.Response, ctx *goproxy.ProxyCtx) *http.Response 
 				data, err := r.Json()
 				if err == nil {
 					go func() {
-						//_ = api.Post(string(data))
-						log.HttpLogger.Info(data)
+						_ = api.Post(string(data))
+						//log.HttpLogger.Info(data)
 					}()
 				}
 			}
