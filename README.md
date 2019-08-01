@@ -1,5 +1,7 @@
 ## 代理蜜罐的开发与应用实战
 
+**QQ交流群：116070598**
+
 本仓库为『代理蜜罐的开发与应用实战』的配套代码，原文地址：
 
 - [freebuf](https://www.freebuf.com/articles/network/202310.html) 
@@ -28,6 +30,9 @@ db.createUser(
 ... }
 ... )
 ```
+
+管理端初次启动给添加一个默认用户，用户名为：`xproxy`，密码为：`x@xsec.io`
+
 
 ## 附录
 
